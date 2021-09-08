@@ -1,0 +1,101 @@
+﻿@{
+	ViewData["Title"] = "ChatApp Home";
+}
+
+
+<div class="toast">
+	<div class="toast-header">
+		<img src="/img/warning.svg"><h5>Toast Header</h5>
+	</div>
+	<div class="toast-body">
+		Some text inside the toast body
+	</div>
+</div>
+
+<div class="wrapper">
+	<!-- Nav Bar Starts -->
+
+	<nav class="nav">
+		<div class="nav-main">
+			<h1 class="logo">ChatApp</h1>
+			<div class="menu-buttons">
+				<img src="/img/menu.svg" onclick="openLeftMenu" />
+			</div>
+			<ul class="nav-items">
+				<li class="nav-item user-name">Username: @User.Identity.Name</li>
+				<li class="nav-item"><a href="https://github.com/ilovepilav" target="_blank">Github</a></li>
+				<li class="nav-item"><a href="https://cagrisakaoglu.com/#projects" target="_blank">Projects</a></li>
+				<li class="nav-item"><a href="https://cagrisakaoglu.com/" target="_blank">About</a></li>
+				<li class="nav-item">Buy me a Coffee!</li>
+				<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+					<button id="logout" type="submit" class="logout-btn">LogOut</button>
+				</form>
+			</ul>
+		</div>
+
+
+	</nav>
+	<div class="main">
+		<!-- Nav Bar Ends -->
+		<!-- Online Clients Area Starts-->
+		<div class="onlineArea">
+			<h1>Online Users</h1>
+			<ul class="onlineClients" id="onlineClients">
+			</ul>
+			<a href="#" class="btn" id="createChat">Start Chat</a>
+		</div>
+		<!-- Online Clients Area Ends-->
+		<!-- Chat Area Starts -->
+		<div class="chatArea">
+			<div class="chatLeft">
+				<h1>Conversations</h1>
+				<div class="conversationsArea" id="conversationList">
+				</div>
+			</div>
+			<div class="chatRight">
+				<div class="messageArea" id="chatWindow">
+				</div>
+				<form action="#" class="inputArea">
+					<input type="text"
+						   class="inputArea"
+						   id="message"
+						   placeholder="Write your message" />
+					<input type="image" src="/img/send.svg" alt="Send-Message" action="submit" class="sendButton" id="sendButton" />
+				</form>
+			</div>
+		</div>
+		<!-- Chat Area Ends -->
+		<!-- Group Chat Starts -->
+		<div class="groupChatArea">
+			<h1>Chat Rooms</h1>
+			<div class="roomList">
+				<ul class="chatRooms" id="groupChatList">
+					<li class="chat-room">Sample Room</li>
+					<li class="chat-room">Sample Room</li>
+				</ul>
+			</div>
+			<a href="#" class="btn" id="joinRoom">Join Room</a>
+			<div class="line"></div>
+			<div class="createRoom">
+				<input type="text" class="chatRoomName" placeholder="Enter Name" />
+				<a href="#" class="btn" id="createRoom">Create Room</a>
+			</div>
+		</div>
+	</div>
+	<!-- Group Chat Ends -->
+	<!-- <footer class="footer">
+	  <ul class="footer-items">
+		<li class="footer-item">Footer item</li>
+		<li class="footer-item">Footer item</li>
+		<li class="footer-item">Footer item</li>
+		<li class="footer-item">Footer item</li>
+	  </ul>
+	</footer> -->
+	<div class="mobile-buttons">
+		<div class="online-users-button" id="mobile-online-users-menu">Online Users</div>
+		<div class="conversations-button" id="mobile-conversations-menu">Conversations</div>
+		<div class="chat-rooms-button" id="mobile-chatrooms-menu">Chat Rooms</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,28 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">*@
+		<div class="auth">
+			<div class="auth-header">
+				<ul class="card-header-tabs">
+					<li class="nav-item" >
+						<a class="nav-link" href="/Identity/Account/Login">Sign In</a>
+					</li>
+					<li class="nav-item" >
+						<a class="nav-link" href="/Identity/Account/Register">Register</a>
+					</li>
+				</ul>
+			</div>
+			<div class="auth-body">
+				<div class="row">
+					<div class="col-md-12">
+						@RenderBody()
+					</div>
+				</div>
+			</div>
+		</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@section Scripts{
+    @await RenderSectionAsync("Scripts", required: false)
+}
