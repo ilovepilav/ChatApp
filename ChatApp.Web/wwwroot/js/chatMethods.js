@@ -41,7 +41,12 @@ function FillMessages(element) {
       item.messages.forEach(function (msg) {
         let msgElement = document.createElement('div');
         if (msg.sender != userName) {
-          msgElement.className = 'message received';
+            msgElement.className = 'message received';
+            if (item.privateChat == false) {
+                let senderName = document.createElement('small');
+                senderName.textContent = msg.sender;
+                msgElement.appendChild(senderName);
+            }
           let messageContent = document.createElement('p');
           messageContent.textContent = msg.content;
           msgElement.appendChild(messageContent);

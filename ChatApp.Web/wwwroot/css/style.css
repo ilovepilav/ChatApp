@@ -298,6 +298,13 @@ footer {
         overflow-wrap: anywhere;
     }
 
+    .messageArea .received small {
+        padding-left: 1em;
+        margin-bottom: 0;
+        font-style: italic;
+        color: var(--clr-primary);
+    }
+
     .messageArea .sent p {
         background-color: var(--clr-primary);
         color: white;
